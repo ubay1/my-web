@@ -148,6 +148,7 @@ export default function Home() {
                         //   height={100}
                         // />
                         <img
+                          key={`index name-${item.name}`}
                           className="img-tech"
                           alt="my photo"
                           src={item.name}
