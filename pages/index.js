@@ -15,6 +15,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Home</title>
+        <link rel='manifest' href='/manifest.json' />
         <link rel="icon" href="/fav.png" />
       </Head>
 
