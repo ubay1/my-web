@@ -124,7 +124,7 @@ export default function Project() {
     {
       gambar: '/proyek/kebugaran_rohani.png',
       judul: 'kebugaran rohani', 
-      link: 'https://kebugaranrohai.surge.sh',
+      link: 'https://kebugaranrohani.surge.sh',
       tech: ['/proyek/svelte.png'] 
     },
     {
