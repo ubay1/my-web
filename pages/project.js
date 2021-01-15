@@ -33,9 +33,14 @@ const DataProject = ({data}) => {
                       <div className="flex items-center justify-between leading-tight p-2 md:p-4">
                           <h1 className="text-lg">
                               <div 
-                                className="roboto_mono text-sm no-underline hover:underline text-black"
+                                className="russo_one text-sm no-underline text-black"
                               >
                                 {item.judul}
+                              </div>
+                              <div 
+                                className="roboto_mono text-xs no-underline hover:underline text-blue-500"
+                              >
+                                <a target="_blank" href={item.link === 'local only' ? '#' : item.link}>{item.link}</a>
                               </div>
                           </h1>
                       </div>
@@ -83,37 +88,50 @@ export default function Project() {
     {
       gambar: '/proyek/myweb.png', 
       judul: 'web portfolio', 
+      link: 'https://my-web.ubay00804.vercel.app',
       tech: ['/proyek/nextjs.png', '/proyek/tailwind.png'] 
     },
     {
       gambar: '/proyek/lokkali_web.png', 
       judul: 'lokkali', 
+      link: 'https://lokkali.co.id',
       tech: ['/proyek/laravel.png', '/proyek/vue.png'] 
     },
     {
       gambar: '/proyek/isengiseng.png', 
-      judul: 'catatan/blog iseng-iseng', 
+      judul: 'blog', 
+      link: 'https://isengiseng.netlify.app',
       tech: ['/proyek/nuxtjs.png'] 
     },
     {
       gambar: '/proyek/lelango.png', 
       judul: 'lelango', 
+      link: 'https://lelango.now.sh',
       tech: ['/proyek/laravel.png','/proyek/nuxtjs.png'] 
     },
     {
       gambar: '/proyek/mws_web.png', 
       judul: 'mobile web specialist', 
+      link: 'https://ubay-mws.firebaseapp.com',
       tech: ['/proyek/js.png'] 
     },
     {
       gambar: '/proyek/pakmontir.png', 
       judul: 'pak montir', 
+      link: 'local only',
       tech: ['/proyek/laravel.png','/proyek/nuxtjs.png'] 
     },
     {
       gambar: '/proyek/kebugaran_rohani.png',
       judul: 'kebugaran rohani', 
+      link: 'https://kebugaranrohai.surge.sh',
       tech: ['/proyek/svelte.png'] 
+    },
+    {
+      gambar: '/proyek/movie.png',
+      judul: 'List Movie App', 
+      link: 'local only',
+      tech: ['/proyek/react.png', '/proyek/tailwind.png'] 
     },
   ])
   
