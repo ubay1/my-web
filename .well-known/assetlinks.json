@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "xyz.appmaker.spllea",
+    "sha256_cert_fingerprints":
+    ["D1:33:B4:27:D7:DF:47:94:D5:26:14:4B:A6:4F:D1:66:DF:29:1A:90:C5:76:2A:4A:10:64:C0:65:BC:EC:E9:DF"]
+  }
+}]
