@@ -5,60 +5,49 @@ import Link from 'next/link'
 
 export default function Home() {
   const [dataTechnology, setdataTechnology] = React.useState([
-    {'id': 1, 'name': '/laravel.jpg' },
-    {'id': 2, 'name': '/vuejs.png' },
-    {'id': 3, 'name': '/reactjs.png' },
-    {'id': 4, 'name': '/reactnative.png' },
+    {'id': 1, 'name': '/tech/laravel.webp', 'text': 'laravel', 'key': 'laravel'},
+    {'id': 2, 'name': '/tech/vuejs.webp', 'text': 'vueJS', 'key': 'vueJS'},
+    {'id': 3, 'name': '/tech/nuxt.webp', 'text': 'nuxtJS', 'key': 'nuxtJS'},
+    {'id': 4, 'name': '/tech/reactjs.webp', 'text': 'reactJS', 'key': 'reactJS'},
+    {'id': 5, 'name': '/tech/reactnative.webp', 'text': 'react native', 'key':  'reactnative'},
+    {'id': 6, 'name': '/tech/node.webp', 'text': 'nodeJS', 'key': 'nodeJS'},
   ])
 
   return (
     <div>
       <Head>
-        <title>Home</title>
+        <title>Ubay Dillah</title>
         <link rel='manifest' href='/manifest.json' />
         <link rel="icon" href="/fav.png" />
       </Head>
 
       {/* email me */}
-      <ul
-        className="absolute top-0 z-10 left-0  mt-8 w-28"
-      >
-        <li className="relative mb-16 float-left transform -rotate-90">
-          <a 
-            target="_blank" 
-            className="roboto_mono no-underline text-base" 
-            href="mailto:ubay00804@gmail.com?subject=hire me"
-            style={{
-              backgroundImage: 'linear-gradient(transparent 0%, transparent calc(50% - 1px), rgba(220, 180, 250, 0.35) calc(50% - 1px), rgba(220, 180, 250, 0.35) 100%)'
-            }}
-          >Hire me
-          </a>
-        </li>
-        <li className="relative float-left transform -rotate-90">
-          <Link 
-            href="/project"
-          > 
-            <a
-              className="roboto_mono no-underline text-base"
-              style={{
-                backgroundImage: 'linear-gradient(transparent 0%, transparent calc(50% - 1px), rgba(220, 180, 250, 0.35) calc(50% - 1px), rgba(220, 180, 250, 0.35) 100%)'
-              }}
-            >Project</a> 
-          </Link>
-        </li>
-      </ul>
+      <div className="menu absolute top-6 left-2 z-10 flex flex-row justify-start items-center ">
+          <div className="mr-2">
+            <Link  href="/project" > 
+              <a className="russo_one underline text-base">Project</a> 
+            </Link>
+          </div>
+
+          <div className="mr-2">
+            <a 
+              target="_blank" 
+              className="russo_one underline text-base" 
+              href="mailto:ubay00804@gmail.com?subject=hire me"
+            >kontak</a>
+          </div>
+      </div>
       
       <div className="grid-container">
-        
         {/* foto */}
         <div
-          className="bg-img-profile bg-blue-200"
+          className="bg-img-profile "
         >
           <div className="img-relative">
             <Image
               className="img-profile"
               alt="my photo"
-              src="/my.png"
+              src="/me/me.png"
               layout="fill"
               objectFit="cover"
               quality={20}
@@ -76,13 +65,14 @@ export default function Home() {
               fontSize: 40
             }}
           >
-            Hi i'm Ubay Dillah
+            Hi saya Ubay Dillah
           </div>
 
           <div 
             className="p-4 border-blue-300 border-solid border-2 mt-4 "
             style={{
-              backgroundColor: '#e4f0fa'
+              backgroundColor: '#e4f0fa',
+              boxShadow: '-8px 8px 1px #93c5fd',
             }}
           >
             <div 
@@ -91,19 +81,21 @@ export default function Home() {
                 fontSize: 28,
               }}
             >
-              What i do ?
+              Apa yang saya kerjakan ?
             </div>
             <p
               className="roboto_mono text-justify"
             >
-              I am a Software Engineering from <a href="https://goiot.id" className="text-blue-500">Goiot.id</a> . Goiot is a cloud platform for internet of things solutions that allows users to easily connect, store, create visuals, and manage direct IoT data as needed. At Goiot, I am tasked with developing websites, including creating widgets for user needs.
+              Saya seorang Software Engineering dari < a href = "https://goiot.id"
+              className = "text-blue-500" > Goiot.id </a>.Goiot adalah platform cloud untuk solusi internet of things yang memungkinkan pengguna untuk dengan mudah terhubung, menyimpan, membuat visual, dan mengelola data IoT langsung sesuai kebutuhan.Di Goiot, saya bertugas mengembangkan situs web, termasuk membuat widget untuk kebutuhan pengguna.
             </p>
           </div>
 
           <div 
-            className="p-4 border-blue-300 border-solid border-2 mt-4 "
+            className="p-4 border-blue-300 border-solid border-2 "
             style={{
-              backgroundColor: '#e4f0fa'
+              backgroundColor: '#e4f0fa',
+              boxShadow: '8px 8px 1px #93c5fd',
             }}
           >
             <div 
@@ -117,12 +109,12 @@ export default function Home() {
                     fontSize: 28,
                   }}
                 >
-                  More about me
+                  Lebih banyak tentang saya
                 </p>
                 <p
                   className="roboto_mono text-justify"
                 >
-                  I work hard to learn new technologies
+                  Saya bekerja keras untuk mempelajari teknologi baru
                 </p>
               </div>
 
@@ -132,31 +124,29 @@ export default function Home() {
                     fontSize: 28,
                   }}
                 >
-                  Technology used
+                  Teknologi yang digunakan
                 </p>
 
                 <div className="grid-technology">
                   {
                     dataTechnology.map((item, index) => {
                       return(
-                        // <Image
-                        //   key={index}
-                        //   alt="my photo"
-                        //   src={item.name}
-                        //   layout="intrinsic"
-                        //   quality={100}
-                        //   width={100}
-                        //   height={100}
-                        // />
-                        <img
-                          key={`index name-${item.name}`}
-                          className="img-tech"
-                          alt="my photo"
-                          src={item.name}
-                          style={{
-                            width: '100%', height: 80
-                          }}
-                        />
+                        <>
+                        <div className="flex justify-center items-center flex-col">
+                          <img
+                            key={`index name-${item.key}`}
+                            className="img-tech"
+                            alt="my photo"
+                            src={item.name}
+                            style={{
+                              width: '100%',height: '100%', objectFit: 'cover'
+                            }}
+                          />
+                          <div> 
+                            {item.text}
+                          </div>
+                        </div>
+                        </>
                       )
                     })
                   }

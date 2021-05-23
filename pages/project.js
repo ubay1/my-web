@@ -12,7 +12,7 @@ const DataProject = ({data}) => {
               data.map((item, index) => {
                 return(
                   <div 
-                    key={`index ke-${index}`} 
+                    key={`index ke-${item.id}`} 
                     className="my-1 px-1 w-full mt-8 md:w-1/2 md:px-4 lg:my-4 lg:px-4 lg:w-1/3"
                   >
                     <div className="overflow-hidden rounded-lg shadow-lg">
@@ -40,7 +40,11 @@ const DataProject = ({data}) => {
                               <div 
                                 className="roboto_mono text-xs no-underline hover:underline text-blue-500"
                               >
-                                <a target="_blank" href={item.link === 'local only' ? '#' : item.link}>{item.link}</a>
+                                <a target="_blank" href={item.link === 'local only' ? '#' : item.link}>
+                                  {
+                                    item.link === 'local only' ? 'lokal project' : 'klik disini'
+                                  }
+                                </a>
                               </div>
                           </h1>
                       </div>
@@ -50,17 +54,20 @@ const DataProject = ({data}) => {
                           item.tech.map((item2, index2) => {
                             return (
                               <div
-                              className="mr-2"
+                              className="mr-2 flex justify-center items-center flex-col"
                               >
                                 <Image
                                   key={`tech-image-${index2}`}
                                   alt="my photo"
-                                  src={item2}
+                                  src={item2.image}
                                   layout="fixed"
-                                  width={25}
-                                  height={25}
+                                  width={30}
+                                  height={30}
+                                  objectFit="cover"
                                   quality={20}
+                                  className="mr-1"
                                 />
+                                <div className="text-xs "> {item2.text} </div>
                               </div>
                             )
                           })
@@ -75,10 +82,6 @@ const DataProject = ({data}) => {
               })
             } 
             </div>
-
-            <Link href="/">
-              <div className="mt-8 px-1 lg:px-1 md:px-4 sm:px-1 russo_one cursor-pointer">back</div>
-            </Link>
           </div>
   )
 }
@@ -86,52 +89,92 @@ const DataProject = ({data}) => {
 export default function Project() {
   const [data, setdata] = React.useState([
     {
-      gambar: '/proyek/myweb.png', 
+      id: 1,
+      gambar: '/proyek/myweb.webp', 
       judul: 'web portfolio', 
       link: 'https://my-web.ubay00804.vercel.app',
-      tech: ['/proyek/nextjs.png', '/proyek/tailwind.png'] 
+      tech: [
+        {image: '/proyek/nextjs.webp', text: 'nextJS'}, 
+        {image:'/proyek/tailwind.webp', text: 'tailwind' }
+      ] 
     },
     {
-      gambar: '/proyek/lokkali_web.png', 
+      id: 2,
+      gambar: '/proyek/lokkali-web.webp', 
       judul: 'lokkali', 
       link: 'https://lokkali.co.id',
-      tech: ['/proyek/laravel.png', '/proyek/vue.png'] 
+      tech: [
+        {image: '/proyek/laravel.webp', text: 'laravel'}, 
+        {image:'/proyek/vue.webp', text: 'vueJS' }
+      ] 
     },
     {
-      gambar: '/proyek/isengiseng.png', 
+      id: 3,
+      gambar: '/proyek/isengiseng.webp', 
       judul: 'blog', 
       link: 'https://isengiseng.netlify.app',
-      tech: ['/proyek/nuxtjs.png'] 
+      tech: [
+        {image: '/proyek/nuxtjs.webp', text: 'nuxtJS'}
+      ] 
     },
     {
-      gambar: '/proyek/lelango.png', 
+      id: 4,
+      gambar: '/proyek/lelango.webp', 
       judul: 'lelango', 
       link: 'https://lelango.now.sh',
-      tech: ['/proyek/laravel.png','/proyek/nuxtjs.png'] 
+      tech: [
+        {image: '/proyek/laravel.webp', text: 'laravel'},
+        {image: '/proyek/nuxtjs.webp', text: 'nuxtJS'}
+      ] 
     },
     {
-      gambar: '/proyek/mws_web.png', 
+      id: 5,
+      gambar: '/proyek/mws_web.webp', 
       judul: 'mobile web specialist', 
       link: 'https://ubay-mws.firebaseapp.com',
-      tech: ['/proyek/js.png'] 
+      tech: [
+        {image: '/proyek/js.webp', text: 'vanillaJS'}
+      ] 
     },
     {
-      gambar: '/proyek/pakmontir.png', 
+      id: 6,
+      gambar: '/proyek/pakmontir.webp', 
       judul: 'pak montir', 
       link: 'local only',
-      tech: ['/proyek/laravel.png','/proyek/nuxtjs.png'] 
+      tech: [
+        {image: '/proyek/laravel.webp', text: 'laravel'},
+        {image: '/proyek/nuxtjs.webp', text: 'nuxtJS'}
+      ] 
     },
     {
-      gambar: '/proyek/kebugaran_rohani.png',
+      id: 7,
+      gambar: '/proyek/kebugaran_rohani.webp',
       judul: 'kebugaran rohani', 
       link: 'https://kebugaranrohani.surge.sh',
-      tech: ['/proyek/svelte.png'] 
+      tech: [
+        {image: '/proyek/svelte.webp', text: 'svelteJS'}
+      ] 
     },
     {
-      gambar: '/proyek/movie.png',
+      id: 8,
+      gambar: '/proyek/movie.webp',
       judul: 'List Movie App', 
       link: 'local only',
-      tech: ['/proyek/react.png', '/proyek/tailwind.png'] 
+      tech: [
+        {image: '/proyek/react.webp', text: 'reactJS'}, 
+        {image:'/proyek/tailwind.webp', text: 'tailwind' }
+      ] 
+    },
+    {
+      id: 9,
+      gambar: '/proyek/catatan_uangku.webp',
+      judul: 'Catatan Uangku',
+      link: 'https://play.google.com/store/apps/details?id=com.catatanuangku',
+      tech: [{
+          image: '/proyek/react.webp',
+          text: 'react native'
+        },
+      ]
     },
   ])
   
@@ -139,12 +182,17 @@ export default function Project() {
     return (
       <div>
         <Head>
-          <title>Project</title>
+          < title > Ubay Dillah ~ Project </title>
           <link rel='manifest' href='/manifest.json' />
-          <link rel="icon" href="/fav.png" />
+          <link rel="icon" href="/fav.webp" />
         </Head>
 
-        <h1 className="russo_one no-underline text-center text-2xl mt-4">My Project</h1>
+        < div className = "flex flex-col justify-center items-center mt-8 px-1 lg:px-1 md:px-4 sm:px-1" >
+          {/* <h1 className="russo_one no-underline text-center text-2xl mt-4">My Project</h1> */}
+          <Link href="/">
+            <div className=" russo_one text-2xl cursor-pointer">Kembali</div>
+          </Link>
+        </div>
         <DataProject data={data}/>
       </div>
     )
