@@ -176,6 +176,16 @@ export default function Project() {
         },
       ]
     },
+    {
+      id: 10,
+      gambar: '/proyek/homi.webp',
+      judul: 'Homi (Smart Home)',
+      link: 'https://play.google.com/store/apps/details?id=com.smarthomegoiot',
+      tech: [{
+        image: '/proyek/react.webp',
+        text: 'react native'
+      }, ]
+    },
   ])
   
   
